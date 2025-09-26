@@ -6,5 +6,61 @@
 <p>This is a paragraph.</p>
 <p>This is a second paragraph</p>
 
+
+<style>
+  :root{
+      --bg:#71a5e0;
+      --card:#0b1220;
+      --accent:#60a5fa;
+      --glass: rgba(255,255,255,0.04);
+      --radius:14px;
+      --max:1100px;
+      color-scheme: light dark;
+    }
+  *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;background:linear-gradient(180deg,#f6f8fb 0%, #ffffff 100%);color:#0b1220;padding:32px 20px;display:flex;align-items:center;justify-content:center}
+    .resume-wrap{width:100%;max-width:var(--max);background:linear-gradient(180deg,white 0%, #fbfdff 100%);border-radius:18px;box-shadow:0 10px 30px rgba(16,24,40,0.12);overflow:hidden;display:grid;grid-template-columns:360px 1fr;gap:0}
+    header.print-hide{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;border-bottom:1px solid #eef3f7}
+    header h1{font-size:18px;margin:0}
+    header p{margin:0;color:var(--muted);font-size:13px}
+    .tag{display:inline-block;padding:6px 8px;border-radius:999px;background:#fff;border:1px solid #e6eef6;margin:6px 6px 0 0;font-size:13px}
+    .main{padding:28px 32px}
+    .summary{font-size:15px;color:#102027;line-height:1.5}
+    .job{margin-bottom:18px}
+    .job h3{margin:0;font-size:16px}
+    .job .meta{color:var(--muted);font-size:13px;margin:6px 0}
+    .job ul{margin:8px 0 0;padding-left:18px}
+    .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+    .project{background:#fbfdff;border:1px solid #eef3f7;padding:12px;border-radius:12px}
+    .actions{display:flex;gap:10px;align-items:center}
+    .btn{padding:8px 12px;border-radius:10px;border:0;cursor:pointer;background:var(--accent);color:white;font-weight:600}
+    .ghost{background:transparent;border:1px solid #dbeafe;color:#0369a1}
+    @media (max-width:900px){.resume-wrap{grid-template-columns:1fr}.sidebar{order:2}header.print-hide{display:none}}
+    @media print{body{padding:0;background:white}.resume-wrap{box-shadow:none;border-radius:0}header,.actions,.ghost{display:none}.resume-wrap{grid-template-columns:1fr !important}}
+  </style>
+
+
+
+<body>
+<head>
+    <h1 class="section-title">Programming Project:</h1>
+    <h2 class="section-title">Smoothie Store Queue Management</h2>
+        <h3 article class="section-title">Skills learned from developing this project:"</h3>
+    
+          <ul>
+            <li>Determined which player has the highest ranked hand of cards.</li>
+            <li>Implemented logic to analyze card data and determine the winner based on predefined ranking rules.</li>
+            <li>Utilized file I/O operations for flexibility and scalability of input sizes.</li>
+            <li>Designed program to handle edge cases, ensuring robustness and reliability.</li>
+            <li>Implemented memory management with dynamic allocation to ensure efficient use of resources.</li>
+          </ul>
+        </article>
+   
+
+
+
+
+
 </body>
 </html>
