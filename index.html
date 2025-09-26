@@ -1,14 +1,13 @@
 <!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Resume Evinelly García Báez</title>
+  <title>Resume — Evinelly García Báez</title>
   <meta name="description" content="Resume / CV for Evinelly García Báez" />
+
   <style>
-    
-    :root{
+    :root {
       --bg:#71a5e0;
       --card:#0b1220;
       --accent:#60a5fa;
@@ -18,80 +17,183 @@
       color-scheme: light dark;
     }
 
-/* I used ChatGpt for help on this portion.*/
+    * { box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; }
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg,#f6f8fb 0%, #ffffff 100%);
+      color: #0b1220;
+      padding: 32px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;background:linear-gradient(180deg,#f6f8fb 0%, #ffffff 100%);color:#0b1220;padding:32px 20px;display:flex;align-items:center;justify-content:center}
-    .resume-wrap{width:100%;max-width:var(--max);background:linear-gradient(180deg,white 0%, #fbfdff 100%);border-radius:18px;box-shadow:0 10px 30px rgba(16,24,40,0.12);overflow:hidden;display:grid;grid-template-columns:360px 1fr;gap:0}
-    header.print-hide{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;border-bottom:1px solid #eef3f7}
-    header h1{font-size:18px;margin:0}
-    header p{margin:0;color:var(--muted);font-size:13px}
-    .sidebar{padding:28px 22px;background:linear-gradient(180deg,#f7fbff 0%, #eef6ff 100%);border-right:1px solid #eef3f7}
-    .photo{width:120px;height:120px;border-radius:14px;overflow:hidden;margin-bottom:16px;background:linear-gradient(135deg,#e6eefb,#ffffff);display:flex;align-items:center;justify-content:center;font-weight:700;color:#0b1220}
-    .name{font-size:20px;font-weight:700;margin:0}
-    .role{color:var(--muted);margin:6px 0 16px;font-size:14px}
-    .contact{font-size:14px;color:#0b1220}
-    .contact a{display:block;color:inherit;text-decoration:none;margin:6px 0}
-    .section-title{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin:18px 0 10px}
-    .skill{margin-bottom:10px}
-    .skill .bar{width:100%;height:8px;background:var(--glass);border-radius:999px;overflow:hidden}
-    .skill .fill{height:100%;border-radius:999px}
-    .tag{display:inline-block;padding:6px 8px;border-radius:999px;background:#fff;border:1px solid #e6eef6;margin:6px 6px 0 0;font-size:13px}
-    .main{padding:28px 32px}
-    .summary{font-size:15px;color:#102027;line-height:1.5}
-    .job{margin-bottom:18px}
-    .job h3{margin:0;font-size:16px}
-    .job .meta{color:var(--muted);font-size:13px;margin:6px 0}
-    .job ul{margin:8px 0 0;padding-left:18px}
-    .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
-    .project{background:#fbfdff;border:1px solid #eef3f7;padding:12px;border-radius:12px}
-    .actions{display:flex;gap:10px;align-items:center}
-    .btn{padding:8px 12px;border-radius:10px;border:0;cursor:pointer;background:var(--accent);color:white;font-weight:600}
-    .ghost{background:transparent;border:1px solid #dbeafe;color:#0369a1}
-    .button{display: inline-block;padding:10px 20px;margin:10px;background-color:#2c4597;color:white;text-decoration:none;border-radius:5px;}
-    .button:hover{background-color:#3061bd;}
-    @media (max-width:900px){.resume-wrap{grid-template-columns:1fr}.sidebar{order:2}header.print-hide{display:none}}
-    @media print{body{padding:0;background:white}.resume-wrap{box-shadow:none;border-radius:0}header,.actions,.ghost{display:none}.resume-wrap{grid-template-columns:1fr !important}}
+    /* Skip link styling */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--accent);
+      color: white;
+      padding: 8px 12px;
+      z-index: 100;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: top 0.3s;
+    }
+    .skip-link:focus {
+      top: 10px;
+    }
+
+    .resume-wrap {
+      width: 100%;
+      max-width: var(--max);
+      background: linear-gradient(180deg, white 0%, #fbfdff 100%);
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(16,24,40,0.12);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 360px 1fr;
+    }
+
+    header.print-hide {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 24px;
+      border-bottom: 1px solid #eef3f7;
+    }
+    header h1 { font-size: 18px; margin: 0; }
+
+    aside.sidebar {
+      padding: 28px 22px;
+      background: linear-gradient(180deg,#f7fbff 0%, #eef6ff 100%);
+      border-right: 1px solid #eef3f7;
+    }
+    .photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 14px;
+      overflow: hidden;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg,#e6eefb,#ffffff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: #0b1220;
+    }
+
+    .name { font-size: 20px; font-weight: 700; margin: 0; }
+    .role { margin: 6px 0 16px; font-size: 14px; color: #555; }
+
+    address {
+      font-style: normal;
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
+    address a {
+      display: block;
+      color: inherit;
+      text-decoration: none;
+      margin: 6px 0;
+    }
+
+    .section-title {
+      font-size: 12px;
+      color: #555;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin: 18px 0 10px;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 6px 8px;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid #e6eef6;
+      margin: 6px 6px 0 0;
+      font-size: 13px;
+    }
+
+    main {
+      padding: 28px 32px;
+    }
+
+    .summary { font-size: 15px; line-height: 1.5; margin-bottom: 24px; }
+    .job { margin-bottom: 18px; }
+    .job h3 { margin: 0; font-size: 16px; }
+    .job p.meta { font-size: 13px; color: #555; margin: 6px 0; }
+
+    .buttons { margin-top: 12px; }
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      margin: 6px;
+      background-color: #2c4597;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .button:hover { background-color: #3061bd; }
+
+    @media (max-width:900px) {
+      .resume-wrap { grid-template-columns: 1fr; }
+      aside.sidebar { order: 2; }
+      header.print-hide { display: none; }
+    }
+
+    @media print {
+      body { padding: 0; background: white; }
+      .resume-wrap { box-shadow: none; border-radius: 0; grid-template-columns: 1fr !important; }
+      header, .buttons, .skip-link { display: none; }
+    }
   </style>
-
 </head>
+
 <body>
-  <div class="resume-wrap" role="main">
-    <div class="sidebar">
-      <div class="photo">Photo</div>  #need to add photo
+  <!-- Accessibility: Skip link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <div class="resume-wrap">
+    <aside class="sidebar">
+      <figure class="photo">
+        <img src="your-photo.jpg" alt="Portrait of Evinelly García Báez" width="120" height="120">
+      </figure>
+
       <h2 class="name">Evinelly García Báez</h2>
-      <div class="role">Information Technology Student</div>
+      <p class="role">Information Technology Student</p>
 
-      <div class="section-title">Contact</div>
-      <nav class="contact">
-        <a>741 Wickham Lakes Dr, Melbourne, FL, 32940</a>
+      <h3 class="section-title">Contact</h3>
+      <address>
+        <p>741 Wickham Lakes Dr<br>Melbourne, FL, 32940</p>
         <a href="tel:+17875142958">☎ (787) 514-2958</a>
-        <a href="mailto:evinellygarcia@gmail.com">✉ ev333860@ucf.edu</a>
-      </nav>
+        <a href="mailto:evinellygarcia@gmail.com">✉ evinellygarcia@gmail.com</a>
+      </address>
 
-      <div class="section-title">Skills</div>
-      <div class="tag">Bilingual (English and Spanish)</div>  
-      <div class="tag">C, C++, Java, Python, SQL, HTML, CSS</div>
-      <div class="tag">Wireshark, Virtual Machines</div>
-      <div class="tag">Agile / Scrum Methodologies, Technical Documentation</div>
-      <div class="tag">Microsoft Excel, Google Sheets</div>
+      <h3 class="section-title">Skills</h3>
+      <span class="tag">Bilingual (English and Spanish)</span>
+      <span class="tag">C, C++, Java, Python, SQL, HTML, CSS</span>
+      <span class="tag">Wireshark, Virtual Machines</span>
+      <span class="tag">Agile / Scrum, Technical Documentation</span>
+      <span class="tag">Microsoft Excel, Google Sheets</span>
 
-      <div class="section-title">Awards</div>
-      <div style="font-size:14px">Dean's List - Spring 2025</div>
-      <div style="font-size:14px">Honor’s Society Medal — Jun 2016</div>
-      
-    </div>
+      <h3 class="section-title">Awards</h3>
+      <p>Dean's List — Spring 2025</p>
+      <p>Honor’s Society Medal — Jun 2016</p>
+    </aside>
 
-    <div class="main">
+    <main id="main-content">
       <header class="print-hide">
-      <h1>Evinelly García Báez</h1>
+        <h1>Evinelly García Báez</h1>
       </header>
 
       <section class="summary">
         <h2 class="section-title">Objective</h2>
         <p>
-          To pursue a programming job in a competitive environment that will push my knowledge and help expand my current skills set, providing growth opportunities for myself, while helping the company reach their milestones.
+          To pursue a programming job in a competitive environment that will push my knowledge and help expand my current skill set, providing growth opportunities for myself, while helping the company reach their milestones.
         </p>
       </section>
 
@@ -100,26 +202,24 @@
 
         <article class="job">
           <h3>Bachelor of Science, Information Technology</h3>
-          University of Central Florida, Orlando, FL — Expected Graduation Date: May 2026
-          GPA: 3.58
+          <p class="meta">University of Central Florida, Orlando, FL — Expected Graduation: May 2026</p>
+          <p>GPA: 3.58</p>
         </article>
 
         <article class="job">
           <h3>Bachelor of Arts, General Communications</h3>
-          University of Turabo, Gurabo, PR — Jun 2016 
+          <p class="meta">University of Turabo, Gurabo, PR — Jun 2016</p>
         </article>
       </section>
 
       <section>
         <h2 class="section-title">Programming Projects</h2>
-
-      <section>
         <div class="buttons">
-          <a href="project1.html" class="button">Project 1</a>
-          <a href="project2.html" class="button">Project 2</a>
+          <a href="project1.html" class="button">Card Suit Calculator</a>
+          <a href="project2.html" class="button">Smoothie Store Queue Management</a>
         </div>
       </section>
-    </div>
+    </main>
   </div>
 </body>
 </html>
