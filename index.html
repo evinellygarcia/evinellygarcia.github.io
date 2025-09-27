@@ -126,18 +126,33 @@
 
     .summary { font-size: 15px; line-height: 1.5; margin-bottom: 24px; }
 
-    .job {
-      margin-bottom: 18px;
-      padding-bottom: 14px;
-      border-bottom: 1px solid #e6eef7;
-    }
+ /* Remove dividers from individual jobs */
+.job {
+  margin-bottom: 18px;
+  padding-bottom: 0;   /* remove padding for divider */
+  border-bottom: none;  /* no divider under each job anymore */
+}
+
+/* Add divider between main sections instead */
+section {
+  margin-bottom: 32px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e6eef7;  /* this is the divider line */
+}
+
+/* Remove divider from the last section */
+section:last-of-type {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
     .job:last-of-type {
       border-bottom: none;
       padding-bottom: 0;
     }
     .job h3 {
     margin: 0;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 700;        /* keep bold */
     color: #555555;          /* change from dark to grey */
     }
