@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Project Showcase Smoothie Store Customer Queue Management</title>
+  <title>Project Showcase | Smoothie Store Queue Management</title>
   <style>
     :root {
       --bg: #f6f8fb;
@@ -53,6 +53,11 @@
       border-radius: var(--radius);
       box-shadow: 0 6px 18px rgba(0,0,0,0.1);
     }
+    figure figcaption {
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 6px;
+    }
     section {
       margin-bottom: 24px;
     }
@@ -83,43 +88,42 @@
 <body>
   <main>
     <header>
-      <h1>Smoothie Store Customer Queue Management</h1>
-      <p>A C program designed to manage customer orders and queue times for a smoothie store, using linked lists and queues to ensure efficient order processing. Focused on memory management, scalability, and preventing resource leaks.</p>
+      <h1>Smoothie Store Queue Management</h1>
+      <p>A C program to manage smoothie store orders using queues and linked lists.</p>
     </header>
 
     <article>
       <figure>
-        <img src="project-image.jpg" alt="Screenshot of the Smoothie shop queue maybe" />
-        <figcaption style="color: var(--muted); font-size: 14px; margin-top: 6px;">
-          Example output of the smoothie shop maybe.
+        <img src="smoothie-project.jpg" alt="Illustration of queue management system handling smoothie orders" />
+        <figcaption>
+          Example workflow of the Smoothie Store Queue Management system
         </figcaption>
       </figure>
 
       <section aria-labelledby="description">
         <h2 id="description">Description</h2>
         <p>
-        This project simulates customer queuing and service management in a smoothie store operating with limited staff. 
-        Originally staffed with multiple clerks across 12 counters, the store now runs with only one clerk due to unforeseen circumstances. 
-        To maintain the appearance of normal operations, customers are distributed into multiple queues.
-        Each customer is recorded with their arrival time, last name, line number, and number of smoothies to purchase. 
-        When serving, the clerk selects the next customer by prioritizing the one with the fewest smoothies; ties are resolved by choosing the lowest-numbered line. 
-        Service time is calculated as a base of 30 seconds plus 5 seconds per smoothie.
-        The system models how queue structures, prioritization rules, and service time calculations affect customer flow and overall store efficiency.
+          This project simulates a queue management system for a smoothie store. 
+          It efficiently organizes customer orders using queues and linked lists, 
+          while dynamically managing memory to prevent resource waste. The program ensures smooth order processing 
+          and provides scalability for multiple customers and different order sizes.
         </p>
       </section>
 
       <section aria-labelledby="skills">
         <h2 id="skills">Skills Learned</h2>
         <ul>
-            <li>Developed a customer queue management system in C to efficiently handle orders.</li>
-            <li>Implemented queues and linked lists to organize and track customers and orders.</li>
-            <li>Managed memory effectively with dynamic allocation/deallocation, preventing leaks</li>
+          <li>Developed queue management system in C for handling customer orders.</li>
+          <li>Applied linked lists to organize and track customer data efficiently.</li>
+          <li>Implemented dynamic memory allocation to optimize resource usage.</li>
+          <li>Strengthened knowledge of data structures and algorithm design.</li>
+          <li>Practiced building scalable programs that can adapt to multiple use cases.</li>
         </ul>
       </section>
     </article>
 
     <footer>
-      © 2025 Project by Evinelly García Báez
+      <p>© 2025 Project by <strong>Evinelly García Báez</strong></p>
     </footer>
   </main>
 </body>

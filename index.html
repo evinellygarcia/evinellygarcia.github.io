@@ -125,7 +125,17 @@
     }
 
     .summary { font-size: 15px; line-height: 1.5; margin-bottom: 24px; }
-    .job { margin-bottom: 18px; }
+
+    .job {
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid #e6eef7;
+    }
+    .job:last-of-type {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
     .job h3 { margin: 0; font-size: 16px; }
     .job p.meta { font-size: 13px; color: #555; margin: 6px 0; }
 
