@@ -10,6 +10,7 @@
       --text: #0b1220;
       --muted: #2c4597;
       --accent: #0a0d11;
+      --focus: #2563eb; /* Bright blue for focus ring */
       --radius: 14px;
       --max: 900px;
     }
@@ -38,6 +39,7 @@
       transition: top 0.3s ease;
       z-index: 100;
     }
+
     .skip-link:focus-visible {
       top: 10px;
       outline: 3px solid var(--focus);
@@ -51,7 +53,7 @@
       outline-offset: 3px;
       border-radius: 4px;
     }
-    
+
     main {
       max-width: var(--max);
       background: white;
@@ -127,16 +129,32 @@
       color: var(--muted);
     }
 
+    .buttons { margin-top: 12px; }
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      margin: 6px;
+      background-color: #2c4597;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .button:hover { background-color: #3061bd; }
+
   </style>
 </head>
 <body>
-  <main>
-    <header>
+
+  <!-- Accessibility skip link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <main id="main-content" role="main" aria-label="Project showcase: Smoothie Store Queue Management">
+    <header role="banner">
       <h1>Smoothie Store Queue Management</h1>
       <p>A C program to manage smoothie store orders using queues and linked lists.</p>
     </header>
 
-    <article>
+    <article role="article" aria-label="Smoothie Store Queue Management">
       <figure>
         <img src="Smoothie Shop Queue System.jpg" alt="Illustration of queue management system handling smoothie orders" />
         <figcaption>
@@ -144,7 +162,7 @@
         </figcaption>
       </figure>
 
-      <section aria-labelledby="description">
+      <section role="region" aria-labelledby="description">
         <h2 id="description">Description</h2>
         <p>
           This project simulates a queue management system for a smoothie store. 
@@ -154,7 +172,7 @@
         </p>
       </section>
 
-      <section aria-labelledby="skills">
+      <section role="region" aria-labelledby="skills">
         <h2 id="skills">Skills Learned</h2>
         <ul>
           <li>Developed queue management system in C for handling customer orders.</li>
@@ -163,6 +181,12 @@
           <li>Strengthened knowledge of data structures and algorithm design.</li>
           <li>Practiced building scalable programs that can adapt to multiple use cases.</li>
         </ul>
+      </section>
+
+      <section role="region" aria-labelledby="return to resume"></section>
+        <div class="buttons">
+          <a href="index.html" class="button">Return to resume</a>
+        </div>
       </section>
     </article>
 
