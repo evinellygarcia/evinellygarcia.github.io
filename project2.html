@@ -13,7 +13,9 @@
       --radius: 14px;
       --max: 900px;
     }
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
       font-family: Inter, Arial, sans-serif;
       background: var(--bg);
@@ -22,6 +24,34 @@
       display: flex;
       justify-content: center;
     }
+
+    /* Skip link for accessibility */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 10px;
+      background: var(--muted);
+      color: white;
+      padding: 8px 12px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: top 0.3s ease;
+      z-index: 100;
+    }
+    .skip-link:focus-visible {
+      top: 10px;
+      outline: 3px solid var(--focus);
+      outline-offset: 4px;
+    }
+
+    /* Universal focus-visible styles for interactive elements */
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid var(--focus);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+    
     main {
       max-width: var(--max);
       background: white;
@@ -29,53 +59,66 @@
       box-shadow: 0 10px 30px rgba(16,24,40,0.12);
       overflow: hidden;
     }
+
     header {
       padding: 24px;
       background: linear-gradient(180deg, #bfd5eb 0%, #80ade0 100%);
       border-bottom: 1px solid #e5eaf0;
     }
+
     header h1 {
       font-size: 24px;
       margin-bottom: 6px;
     }
+
     header p {
       color: var(--muted);
       font-size: 15px;
     }
+
     article {
       padding: 28px;
     }
+
     figure {
       margin-bottom: 20px;
     }
+
     figure img {
       width: 100%;
       border-radius: var(--radius);
       box-shadow: 0 6px 18px rgba(0,0,0,0.1);
     }
+
     figure figcaption {
       color: var(--muted);
       font-size: 14px;
       margin-top: 6px;
     }
+
     section {
       margin-bottom: 24px;
     }
+
     h2 {
       font-size: 18px;
       margin-bottom: 10px;
       color: var(--accent);
     }
+
     p {
       line-height: 1.5;
       margin-bottom: 12px;
     }
+
     ul {
       padding-left: 20px;
     }
+
     li {
       margin-bottom: 8px;
     }
+
     footer {
       padding: 18px 24px;
       background: #f8fafc;
@@ -83,6 +126,7 @@
       font-size: 14px;
       color: var(--muted);
     }
+
   </style>
 </head>
 <body>
