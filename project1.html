@@ -8,12 +8,15 @@
     :root {
       --bg: #f6f8fb;
       --text: #0b1220;
-      --muted: #5a83bd;
+      --muted: #0f51ac;
       --accent: #0a0d11;
+      --focus: #2563eb; /* Bright blue for focus ring */
       --radius: 14px;
       --max: 900px;
     }
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
       font-family: Inter, Arial, sans-serif;
       background: var(--bg);
@@ -21,7 +24,36 @@
       padding: 32px 20px;
       display: flex;
       justify-content: center;
+      line-height: 1.5;
     }
+
+    /* Skip link for accessibility */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 10px;
+      background: var(--muted);
+      color: white;
+      padding: 8px 12px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: top 0.3s ease;
+      z-index: 100;
+    }
+    .skip-link:focus-visible {
+      top: 10px;
+      outline: 3px solid var(--focus);
+      outline-offset: 4px;
+    }
+
+    /* Universal focus-visible styles for interactive elements */
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid var(--focus);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
     main {
       max-width: var(--max);
       background: white;
@@ -29,9 +61,10 @@
       box-shadow: 0 10px 30px rgba(16,24,40,0.12);
       overflow: hidden;
     }
+
     header {
       padding: 24px;
-      background: linear-gradient(180deg, #f7fbff 0%, #eef6ff 100%);
+      background: linear-gradient(180deg, #bfd5eb 0%, #80ade0 100%);
       border-bottom: 1px solid #e5eaf0;
     }
     header h1 {
@@ -42,9 +75,11 @@
       color: var(--muted);
       font-size: 15px;
     }
+
     article {
       padding: 28px;
     }
+
     figure {
       margin-bottom: 20px;
     }
@@ -53,6 +88,12 @@
       border-radius: var(--radius);
       box-shadow: 0 6px 18px rgba(0,0,0,0.1);
     }
+    figcaption {
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 6px;
+    }
+
     section {
       margin-bottom: 24px;
     }
@@ -61,16 +102,14 @@
       margin-bottom: 10px;
       color: var(--accent);
     }
-    p {
-      line-height: 1.5;
-      margin-bottom: 12px;
-    }
+
     ul {
       padding-left: 20px;
     }
     li {
       margin-bottom: 8px;
     }
+
     footer {
       padding: 18px 24px;
       background: #f8fafc;
@@ -81,21 +120,24 @@
   </style>
 </head>
 <body>
-  <main>
-    <header>
+  <!-- Accessibility skip link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <main id="main-content" role="main" aria-label="Project showcase: Card Suit Calculator">
+    <header role="banner">
       <h1>Card Suit Calculator</h1>
       <p>A C program developed to determine which player has the highest ranked hand of cards.</p>
     </header>
 
-    <article>
+    <article role="article" aria-label="Card Suit Calculator details">
       <figure>
         <img src="project-image.jpg" alt="Screenshot of Card Suit Calculator project" />
-        <figcaption style="color: var(--muted); font-size: 14px; margin-top: 6px;">
+        <figcaption>
           Example output of the Card Suit Calculator
         </figcaption>
       </figure>
 
-      <section aria-labelledby="description">
+      <section role="region" aria-labelledby="description">
         <h2 id="description">Description</h2>
         <p>
           This project analyzes card data and determines the winner based on predefined ranking rules. 
@@ -104,19 +146,19 @@
         </p>
       </section>
 
-      <section aria-labelledby="skills">
+      <section role="region" aria-labelledby="skills">
         <h2 id="skills">Skills Learned</h2>
         <ul>
-            <li>Determined which player has the highest ranked hand of cards.</li>
-            <li>Implemented logic to analyze card data and determine the winner based on predefined ranking rules.</li>
-            <li>Utilized file I/O operations for flexibility and scalability of input sizes.</li>
-            <li>Designed program to handle edge cases, ensuring robustness and reliability.</li>
-            <li>Implemented memory management with dynamic allocation to ensure efficient use of resources.</li>
+          <li>Determined which player has the highest ranked hand of cards.</li>
+          <li>Implemented logic to analyze card data and determine the winner based on predefined ranking rules.</li>
+          <li>Utilized file I/O operations for flexibility and scalability of input sizes.</li>
+          <li>Designed program to handle edge cases, ensuring robustness and reliability.</li>
+          <li>Implemented memory management with dynamic allocation to ensure efficient use of resources.</li>
         </ul>
       </section>
     </article>
 
-    <footer>
+    <footer role="contentinfo">
       © 2025 Project by Evinelly García Báez
     </footer>
   </main>
